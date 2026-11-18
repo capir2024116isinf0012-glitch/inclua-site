@@ -1,4 +1,4 @@
-# Incluá 
+# Incluá
 
 > Autonomia além da tecnologia.
 
