@@ -1,69 +1,36 @@
-<html lang="pt-BR">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sobre Nós | Incluá</title>
-	</head>
-	<body>
-		<header>
-			<strong>Incluá</strong>
-			<nav>
-				<ul>
-					<li><a href="/">Início</a></li>
-					<li><a href="/sobre">Sobre</a></li>
-					<li><a href="/equipe">Equipe</a></li>
-					<li><a href="/contato">Contato</a></li>
-				</ul>
-			</nav>
-		</header>
+---
+import LayoutBase from '../layouts/LayoutBase.astro';
+import { empresa } from '../data/empresa.js';
+---
 
-		<main>
-			<section>
-				<h1>Sobre a Incluá</h1>
-				<p>Fundada em 2022, em Campinas (SP), a Incluá surgiu com o propósito de tornar a tecnologia mais acessível, especialmente para idosos e pessoas com deficiência. Inicialmente, desenvolveu soluções para simplificar tarefas digitais, superando o desafio de atender diferentes necessidades. Ao longo de sua trajetória, aprimorou seus softwares e recursos de acessibilidade, mantendo o compromisso de promover autonomia, inclusão e participação digital, para que ninguém fique para trás.</p>
-			</section>
+<LayoutBase 
+	titulo="Sobre Nós" 
+	descricao={`Conheça a história e os valores da ${empresa.nome}.`}
+>
+	<section>
+		<h1>Sobre a {empresa.nome}</h1>
+		<p>{empresa.historia}</p>
+	</section>
 
-			<section>
-				<h2>Missão</h2>
-				<p> Incluá desenvolve softwares acessíveis que promovem autonomia, inclusão e participação digital para todos.</p>
-			</section>
+	<section>
+		<h2>Missão</h2>
+		<p>{empresa.missao}</p>
+	</section>
 
-			<section>
-				<h2>Visão</h2>
-				<p>Tornar-se referência nacional em tecnologias acessíveis e inclusivas, expandindo sua atuação e desenvolvendo soluções que transformem a relação das pessoas com o mundo digital, tornando-o mais acessível e intuitivo para todos.</p>
-			</section>
+	<section>
+		<h2>Visão</h2>
+		<p>{empresa.visao}</p>
+	</section>
 
-			<section>
-				<h2>Nossos Valores</h2>
-				<ul>
-					<li>
-						<h3>Inclusão</h3>
-						<p>Desenvolvemos nossas soluções pensando na diversidade das pessoas e buscando garantir que a tecnologia esteja acessível a todos.</p>
-					</li>
-					<li>
-						<h3>Acessibilidade</h3>
-						<p>Criamos experiências digitais simples, intuitivas e adaptadas às diferentes necessidades, reduzindo barreiras no uso da tecnologia.</p>
-					</li>
-					<li>
-						<h3>Autonomia</h3>
-						<p>Acreditamos que a tecnologia deve proporcionar independência e confiança, permitindo que cada pessoa realize suas atividades com mais liberdade.</p>
-					</li>
-                    <li>
-						<h3>Empatia</h3>
-						<p>Colocamos as pessoas no centro das nossas decisões, buscando compreender suas necessidades, dificuldades e diferentes formas de interagir com o mundo digital.</p>
-					</li>
-                    <li>
-						<h3>Inovação com propósito/h3>
-						<p>Utilizamos a tecnologia e a criatividade para desenvolver soluções que não apenas sejam modernas, mas que gerem impacto positivo e contribuam para uma sociedade mais inclusiva.
-</p>
-					</li>
-				</ul>
-			</section>
-		</main>
-
-		<footer>
-			<p>&copy; 2026 Incluá. Todos os direitos reservados.</p>
-		</footer>
-	</body>
-</html>
+	<section>
+		<h2>Nossos Valores</h2>
+		<ul>
+			{empresa.valores.map((valor) => (
+				<li>
+					<h3>{valor.titulo}</h3>
+					<p>{valor.descricao}</p>
+				</li>
+			))}
+		</ul>
+	</section>
+</LayoutBase>
