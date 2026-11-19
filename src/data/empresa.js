@@ -48,7 +48,7 @@ export const empresa = {
       cargo: "Desenvolvedor(a) Full Stack",
       foto: "/images/hananda.png",
       alt: "Foto de Hananda Islla",
-      descricao: "Desenvolvedora Full Stack da Incluá, iniciou sua trajetória desenvolvendo soluções digitais e sistemas voltados à acessibilidade. Atua na criação de softwares inovadores, buscando tornar a tecnologia mais simples e inclusiva para todos."
+      descricao: "Desenvolvedora Full Stack da Incluá, atua na criação e desenvolvimento de soluções digitais acessíveis, unindo tecnologia, inovação e funcionalidade."
     },
     {
       nome: "Rafaelle Araújo Sampaio",
